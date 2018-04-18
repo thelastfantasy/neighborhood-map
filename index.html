@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>地图应用 上海宝山区附近部分银行信息获取</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <main class="col p-0 navbar-inverse">
+                <a href class="float-right m-3 navbar-light" data-target="#sidebar" data-toggle="collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </a>
+                <div class="content bg-inverse">
+                    <div id="map">
+                        <p class="map_error"></p>
+                    </div>
+                </div>
+            </main>
+            <nav class="col-2 collapse bg-inverse pt-2 h-100 sidebar_width" id="sidebar">
+                <h4 class="app_title text-white">上海宝山区一带银行</h4>
+                <input class="search" data-bind="textInput: searchOption, valueUpdate: 'afterkeydown'" placeholder="过滤地址...">
+                <hr class="sidebar_hr">
+                <ul class="nav flex-column" data-bind="foreach: myLocationsFilter">
+                    <a href="#">
+                        <li class="nav-item text-white location_list" data-bind="text: title, click: $parent.populateAndBounceMarker"></li>
+                    </a>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <script src="js/knockout.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/tether/1.4.3/js/tether.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="js/markers.js"></script>
+    <script src="js/styles.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/adjust.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCgpjyLkKkL_sMdBSY4PZuwD0rJkmpV01g&callback=run" onerror="googleError()"></script>
+</body>
+
+</html>
